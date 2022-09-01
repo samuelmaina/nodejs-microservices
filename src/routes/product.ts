@@ -4,6 +4,6 @@ import product from "../controllers/product";
 const router = express.Router();
 
 router.route("/products").get(product.getProducts);
-router.route("/product").post(product.postProduct);
+router.route("/product").post(product.postProduct).get(product.getProductById);
 
 export default router;

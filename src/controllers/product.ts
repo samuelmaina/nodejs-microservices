@@ -19,4 +19,14 @@ export default {
       next(error);
     }
   },
+
+  getProductById: async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const prodId = Number(req.params.id);
+      const fetched = product.getProductById(prodId);
+      res.status(201).json(fetched);
+    } catch (error) {
+      next(error);
+    }
+  },
 };

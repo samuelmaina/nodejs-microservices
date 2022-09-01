@@ -13,4 +13,7 @@ export default {
     const result = await productRepository.save();
     return result;
   },
+  getProductById: async (productId: number) => {
+    return await productRepository.findOne(productId);
+  },
 };
