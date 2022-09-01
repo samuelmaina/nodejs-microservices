@@ -10,4 +10,13 @@ export default {
       next(error);
     }
   },
+  postProduct: async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const productData = req.body;
+      const newProduct = product.createNewProduct(productData);
+      res.status(201).json(newProduct);
+    } catch (error) {
+      next(error);
+    }
+  },
 };
