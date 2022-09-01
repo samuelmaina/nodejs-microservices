@@ -23,4 +23,7 @@ export default {
     const result = await productRepository.save(product);
     return result;
   },
+  delete: async (productId: number) => {
+    await productRepository.delete(productId);
+  },
 };

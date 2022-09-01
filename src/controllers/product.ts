@@ -40,4 +40,14 @@ export default {
       next(error);
     }
   },
+
+  deleteProduct: async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const prodId = Number(req.params.id);
+      await product.delete(prodId);
+      res.status(201).json({ message: "Product deleted successfully." });
+    } catch (error) {
+      next(error);
+    }
+  },
 };

@@ -8,6 +8,7 @@ router.route("/product").post(product.postProduct);
 router
   .route("/product/:id")
   .get(product.getProductById)
-  .put(product.editProduct);
+  .put(product.editProduct)
+  .delete(product.deleteProduct);
 
 export default router;
