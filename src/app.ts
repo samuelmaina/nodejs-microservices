@@ -1,19 +1,16 @@
 import express, { Request, Response, NextFunction } from "express";
 import cors from "cors";
-import { createConnection } from "typeorm";
+import routes from "./routes";
 
-createConnection()
-  .then((db) => {
-    const PORT: number = 8080;
+const PORT: number = 8080;
 
-    const app = express();
+const app = express();
 
-    app.use(cors());
+app.use(cors());
 
-    app.listen(PORT, () => {
-      console.log("Server listening of port", PORT);
-    });
-  })
-  .catch((e) => {
-    console.log("unable to connect to the database due to error " + e);
-  });
+app.use(express.json());
+app.use("api", routes);
+
+app.listen(PORT, () => {
+  console.log("Server listening of port", PORT);
+});
