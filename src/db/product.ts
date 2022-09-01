@@ -26,4 +26,9 @@ export default {
   delete: async (productId: number) => {
     await productRepository.delete(productId);
   },
+  likeProduct: async (productId: number) => {
+    const product = await getProductById(productId);
+    product.likes++;
+    return productRepository.save(product);
+  },
 };

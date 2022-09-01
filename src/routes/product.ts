@@ -11,4 +11,6 @@ router
   .put(product.editProduct)
   .delete(product.deleteProduct);
 
+router.route("/product/:id/like").post(product.likeProduct);
+
 export default router;

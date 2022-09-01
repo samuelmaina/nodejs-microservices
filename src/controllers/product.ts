@@ -50,4 +50,14 @@ export default {
       next(error);
     }
   },
+
+  likeProduct: async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const prodId = Number(req.params.id);
+      const result = await product.likeProduct(prodId);
+      res.status(201).json({ message: "Liked added successfully." });
+    } catch (error) {
+      next(error);
+    }
+  },
 };
