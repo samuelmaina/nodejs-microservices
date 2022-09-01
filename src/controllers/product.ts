@@ -29,4 +29,15 @@ export default {
       next(error);
     }
   },
+
+  editProduct: async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const prodId = Number(req.params.id);
+      const newData = req.body;
+      const updated = await product.editProduct(prodId, newData);
+      res.status(201).json(updated);
+    } catch (error) {
+      next(error);
+    }
+  },
 };
