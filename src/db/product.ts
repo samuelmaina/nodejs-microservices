@@ -2,13 +2,15 @@ import db from "./initConnection";
 
 import { Product } from "../entities/Product";
 
+const productRepository = db.getRepository(Product);
+
 export default {
   getAllProduct: async () => {
-    await db.getRepository(Product).find();
+    await productRepository.find();
   },
   createNewProduct: async (productData: any) => {
-    await db.getRepository(Product).create(productData);
-    const result = await db.getRepository(Product).save();
+    await productRepository.create(productData);
+    const result = await productRepository.save();
     return result;
   },
 };
