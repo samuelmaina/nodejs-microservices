@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import product from "../db/product";
+import product from "../db/seller";
 
 export default {
   getProducts: async (req: Request, res: Response, next: NextFunction) => {

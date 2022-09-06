@@ -6,7 +6,7 @@ export class Product {
   id: number;
 
   @Column({ length: 50 })
-  title: string;
+  userId: string;
 
   @Column({ length: 50 })
   imageUrl: string;

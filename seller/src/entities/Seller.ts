@@ -6,11 +6,11 @@ export class Product {
   id: number;
 
   @Column({ length: 50 })
-  title: string;
-
-  @Column({ length: 50 })
-  imageUrl: string;
+  name: string;
 
   @Column({ default: 0 })
-  likes: number;
+  total_sales: number;
+
+  @Column({ default: 0 })
+  total_profits: number;
 }

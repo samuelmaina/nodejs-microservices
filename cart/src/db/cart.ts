@@ -1,6 +1,6 @@
 import db from "./initConnection";
 
-import { Product } from "../entities/Product";
+import { Product } from "../entities/Cart";
 
 const productRepository = db.getRepository(Product);
 

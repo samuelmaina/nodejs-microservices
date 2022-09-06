@@ -1,16 +1,13 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Product {
+export class Customer {
   @PrimaryGeneratedColumn()
   id: number;
 
   @Column({ length: 50 })
-  title: string;
+  name: string;
 
   @Column({ length: 50 })
-  imageUrl: string;
-
-  @Column({ default: 0 })
-  likes: number;
+  balance: string;
 }
